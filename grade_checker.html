@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Document</title>
+</head>
+<body>
+    <h1 align="center">Grade Checker</h1>
+    <table style="margin: auto;">
+        <tr>
+            <td>Enter Subject Name:</td>
+            <td><input type="text" name="" id="sub" required></td>
+        </tr>
+        <tr>
+            <td>Enter Your Marks:</td>
+            <td><input type="number" id="marks" required></td>
+        </tr>
+        <tr>
+            
+            <td colspan="2" align="center">
+                <input type="submit" value="Check Result" id="res" onclick="result()" style="width: 100%;" >
+            </td>
+        </tr>
+        <tr>
+            <td colspan="2" align="center"><h3>Your Result</h3></td>
+        </tr>
+        <tr>
+            <td>Subject:</td>
+            <td><input type="text" id="sub_output" disabled></td>
+        </tr>
+        <tr>
+            <td>Grade:</td>
+            <td><input type="text" id="grade_output" disabled></td>
+        </tr>
+    </table>
+    <script>
+        function result(){
+            var grade, sub;
+            var sub = document.getElementById('sub').value;
+            var marks = document.getElementById('marks').value;
+            if(marks >=80)
+                grade = "A+";
+            else if (marks < 80 && marks >= 70) {
+                grade = "A";
+            }
+            else if (marks < 70 && marks >= 60) {
+            grade = "A-";
+            } 
+            else {
+                grade = 'Error'
+            }
+                
+           document.getElementById('sub_output').value = sub;
+           document.getElementById('grade_output').value = grade;
+
+        }
+    </script>
+</body>
+</html>
